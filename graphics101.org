@@ -1,0 +1,92 @@
+#+STARTUP: inlineimages
+* Basic
+  
+when you start to learn rendering algorithm in computer graphics, you definitely don't want to see the obsure math formula on wiki or the amazing "indexes" book, Real-Time Rendering, Fourth Edition by Abbey, Duane C.; Haines, Eric; Hoffman, Naty. 
+Here are some tutorials including better explains and code that help me make the baby step. Thanks for the sharing of these intelligent people.
+Happy learning.
+
+** If you're newbie to opengl, this site [[https://learnopengl.com/Introduction][learnopengl.com]] definitely should be the first resource.    
+
+
+** an Amazing Math material
+https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/
+
+
+** songho blog - [[http://www.songho.ca/opengl/gl_projectionmatrix.html#perspective][OpenGL Projection Matrix]] 
+
+
+** Why does most GameEngine render the oqaque objects in front-to-back order? - Early Depth-Test 
+  - [[https://docs.derivative.ca/Early_Depth-Test][Early Depth-Test]] is enabled by default on GPUs. There is no toggle to turn it on and off. Instead the GPU will automatically turn it off if features that aren't compatible with Early Depth-Test are enabled. 
+  - Taking Advantage of Early Depth-Test
+   #+begin_quote
+   If Early Depth-Test is on, the only thing you need to do is draw your geometry in closest to farthest order. If done perfectly (which is nearly impossible though), the only pixels the GPU will shade are the ones that are visible in the final image.
+   #+end_quote
+   
+
+** sRGB color space & physically linear & Gamma Correction
+	[[https://learnopengl.com/Advanced-Lighting/Gamma-Correction][learnopengl - Gamma Correction]]
+*** why do we store the texture data in sRGB color non-linear space? 	
+	[[http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma/][what-every-coder-should-know-about-gamma]]
+
+
+** HDR(High dynamic range) & tone mapping
+	#+begin_quote
+https://learnopengl.com/Advanced-Lighting/HDR
+	High dynamic range was originally only used for photography where a photographer takes multiple pictures of the same scene with varying exposure levels, capturing a large range of color values. 
+	#+end_quote
+
+	#+begin_quote
+transform all the HDR values back to the low dynamic range (LDR) of [0.0, 1.0]. This process of converting HDR values to LDR values is called ~tone mapping~
+	#+end_quote
+
+	
+** LightMap Basic
+*** What is LightMap?
+- UVAltas
+[[file:~/Documents/study/graphics/topics/lightmaps/isochart.jpg][UVAtlas result.jpg]]
+- Lightmap often use global illumination to get diffuse lighting.
+  
+*** Radiosity
+[[https://www.siggraph.org/education/materials/HyperGraph/radiosity/overview_1.htm][siggraph - overview]] - invalid link...
+
+*** TODO [[https://www.opengl.org/pipeline/article/vol003_6/][a opengl simple non-linear twist problem, GLSL: Center or Centroid?]]
+
+	[[pdfview:/Users/shuochenliang/Documents/study/eBook/Graphics/Opengl/OpenGLSuperBible5thEditionEng.pdf::487][Bible5.pdf - Advanced Shader Usage - Centroid Sampling]]
+	 
+
+*** [[http://web.archive.org/web/20071001024020/http://freespace.virgin.net/hugo.elias/radiosity/radiosity.htm][hugo.elias radiosity Pseudocode]] 
+
+*** [[https://github.com/ands/lightmapper][a C/C++ single-file library for lightmap baking]]
+
+*** Witness Blog - [[http://the-witness.net/news/2010/03/graphics-tech-texture-parameterization/][Lightmap Parameterization]]
+	#+begin_quote
+	it seemed appropriate to develop our own in-game system for global illumination.  It could have been radiosity, could have been something like Monte Carlo Path Tracing, but Charles Bloom suggested the very simple solution of just rendering the scene for every pixel in a lightmap
+	#+end_quote
+
+	#+begin_quote
+	At preprocess time, we just walk a camera over every surface, pointing the camera away from the surface and rendering the game scene into a hemicube in video memory.  The render target textures of a hemicube are packed together into an atlas, and when the atlas fills up, we download it into system memory, integrate the values in each hemicube to find an average light value, and then store that value in the lightmap.
+	#+end_quote
+
+*** [[http://the-witness.net/news/2010/09/hemicube-rendering-and-integration/][Blog - Hemicube Rendering and Integration]]
+
+	#+begin_quote
+	Rendering the scene from every lightmap texel to gather all the incoming irradiance at that point, integrating it to compute the output radiance, and repeating these steps multiple times until the lightmaps converge to an approximate solution. This is basically the same procedure described by Hugo Elias.
+	#+end_quote
+	 
+
+	#+begin_quote
+	rasterize the geometry in the lightmap UV space ??
+	#+end_quote
+
+
+ 
+
+** Physical Basic Rendering   
+*** [[https://learnopengl.com/PBR/Theory][learnopengl - PBR]]	
+
+** Ray Tracing
+[[https://github.com/petershirley/raytracinginoneweekend][Ray Tracing in One Weekend pdf & code]]
+
+** Path Tracing   
+aras-p Blog -  [[https://aras-p.info/blog/2018/03/28/Daily-Pathtracer-Part-1-Initial-C-/][Daily Pathtracer]]
+
