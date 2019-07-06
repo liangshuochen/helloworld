@@ -1,0 +1,6 @@
+* Basic
+** Useful links & ~Code~ about computer graphics
+When you start to learn algorithms in computer graphics, you definitely don't want to see the obsure math formula on wiki or the amazing "indexes" book, Real-Time Rendering, Fourth Edition by Abbey, Duane C.; Haines, Eric; Hoffman, Naty. 
+Here are some tutorials including better explains and code that help me make the baby step. Thanks for the sharing of these intelligent people.
+Happy learning.
+

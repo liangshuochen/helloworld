@@ -1,12 +1,7 @@
 #+STARTUP: inlineimages
 * Basic
-  
-when you start to learn rendering algorithm in computer graphics, you definitely don't want to see the obsure math formula on wiki or the amazing "indexes" book, Real-Time Rendering, Fourth Edition by Abbey, Duane C.; Haines, Eric; Hoffman, Naty. 
-Here are some tutorials including better explains and code that help me make the baby step. Thanks for the sharing of these intelligent people.
-Happy learning.
 
 ** If you're newbie to opengl, this site [[https://learnopengl.com/Introduction][learnopengl.com]] definitely should be the first resource.    
-
 
 ** an Amazing Math material
 https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/
